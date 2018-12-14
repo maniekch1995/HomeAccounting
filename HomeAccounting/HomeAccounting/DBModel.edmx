@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OCTOPUSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Incomes">
+          <Key>
+            <PropertyRef Name="IdIncomes" />
+          </Key>
+          <Property Name="IdIncomes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ValueOfIncome" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="NameIncome" Type="varchar" MaxLength="200" />
+          <Property Name="TypeIncome" Type="varchar" MaxLength="200" />
+          <Property Name="DateIncome" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ValuePayment" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DatePayment" Type="datetime" />
+          <Property Name="ShopName" Type="varchar" MaxLength="200" />
+          <Property Name="PlaceName" Type="varchar" MaxLength="200" />
+          <Property Name="TypeName" Type="varchar" MaxLength="200" />
+          <Property Name="Tmstmp" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="OCTOPUSModelStoreContainer">
+          <EntitySet Name="Incomes" EntityType="Self.Incomes" Schema="HA2" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="HA2" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OCTOPUSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Incomes">
+          <Key>
+            <PropertyRef Name="IdIncomes" />
+          </Key>
+          <Property Name="IdIncomes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValueOfIncome" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="NameIncome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TypeIncome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DateIncome" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ValuePayment" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DatePayment" Type="DateTime" Precision="3" />
+          <Property Name="ShopName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PlaceName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Tmstmp" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="OCTOPUSEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Incomes" EntityType="Self.Incomes" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OCTOPUSModelStoreContainer" CdmEntityContainer="OCTOPUSEntities4">
+          <EntitySetMapping Name="Incomes">
+            <EntityTypeMapping TypeName="OCTOPUSModel.Incomes">
+              <MappingFragment StoreEntitySet="Incomes">
+                <ScalarProperty Name="IdIncomes" ColumnName="IdIncomes" />
+                <ScalarProperty Name="ValueOfIncome" ColumnName="ValueOfIncome" />
+                <ScalarProperty Name="NameIncome" ColumnName="NameIncome" />
+                <ScalarProperty Name="TypeIncome" ColumnName="TypeIncome" />
+                <ScalarProperty Name="DateIncome" ColumnName="DateIncome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="OCTOPUSModel.Payments">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+                <ScalarProperty Name="ValuePayment" ColumnName="ValuePayment" />
+                <ScalarProperty Name="DatePayment" ColumnName="DatePayment" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Tmstmp" ColumnName="Tmstmp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

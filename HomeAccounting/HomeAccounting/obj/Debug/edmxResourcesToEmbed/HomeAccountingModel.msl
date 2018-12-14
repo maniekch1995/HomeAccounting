@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OCTOPUSModelStoreContainer" CdmEntityContainer="OCTOPUSEntities">
+    <EntitySetMapping Name="Incomes">
+      <EntityTypeMapping TypeName="OCTOPUSModel.Income">
+        <MappingFragment StoreEntitySet="Incomes">
+          <ScalarProperty Name="IdIncomes" ColumnName="IdIncomes" />
+          <ScalarProperty Name="ValueOfIncome" ColumnName="ValueOfIncome" />
+          <ScalarProperty Name="NameIncomeId" ColumnName="NameIncomeId" />
+          <ScalarProperty Name="TypeIncomeId" ColumnName="TypeIncomeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomesNameDictionaries">
+      <EntityTypeMapping TypeName="OCTOPUSModel.IncomesNameDictionary">
+        <MappingFragment StoreEntitySet="IncomesNameDictionary">
+          <ScalarProperty Name="IdNameIncome" ColumnName="IdNameIncome" />
+          <ScalarProperty Name="IncomeName" ColumnName="IncomeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomesTypeDictionaries">
+      <EntityTypeMapping TypeName="OCTOPUSModel.IncomesTypeDictionary">
+        <MappingFragment StoreEntitySet="IncomesTypeDictionary">
+          <ScalarProperty Name="IdTypeIncome" ColumnName="IdTypeIncome" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentsHeaders">
+      <EntityTypeMapping TypeName="OCTOPUSModel.PaymentsHeader">
+        <MappingFragment StoreEntitySet="PaymentsHeader">
+          <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+          <ScalarProperty Name="ValuePayment" ColumnName="ValuePayment" />
+          <ScalarProperty Name="DatePayment" ColumnName="DatePayment" />
+          <ScalarProperty Name="Tmstmp" ColumnName="Tmstmp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentsPlaceDictionaries">
+      <EntityTypeMapping TypeName="OCTOPUSModel.PaymentsPlaceDictionary">
+        <MappingFragment StoreEntitySet="PaymentsPlaceDictionary">
+          <ScalarProperty Name="IdPlacePayment" ColumnName="IdPlacePayment" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentsPositions">
+      <EntityTypeMapping TypeName="OCTOPUSModel.PaymentsPosition">
+        <MappingFragment StoreEntitySet="PaymentsPositions">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="ShopPaymentId" ColumnName="ShopPaymentId" />
+          <ScalarProperty Name="PlacePaymentId" ColumnName="PlacePaymentId" />
+          <ScalarProperty Name="TypePaymentId" ColumnName="TypePaymentId" />
+          <ScalarProperty Name="ValuePayment" ColumnName="ValuePayment" />
+          <ScalarProperty Name="NameOfPayment" ColumnName="NameOfPayment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentsShopDictionaries">
+      <EntityTypeMapping TypeName="OCTOPUSModel.PaymentsShopDictionary">
+        <MappingFragment StoreEntitySet="PaymentsShopDictionary">
+          <ScalarProperty Name="IdShopPayment" ColumnName="IdShopPayment" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentsTypeDictionaries">
+      <EntityTypeMapping TypeName="OCTOPUSModel.PaymentsTypeDictionary">
+        <MappingFragment StoreEntitySet="PaymentsTypeDictionary">
+          <ScalarProperty Name="IdTypePayment" ColumnName="IdTypePayment" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

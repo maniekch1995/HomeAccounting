@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OCTOPUSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Income">
+    <Key>
+      <PropertyRef Name="IdIncomes" />
+    </Key>
+    <Property Name="IdIncomes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ValueOfIncome" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="NameIncomeId" Type="Int32" />
+    <Property Name="TypeIncomeId" Type="Int32" />
+    <NavigationProperty Name="IncomesNameDictionary" Relationship="Self.FK__Incomes__NameInc__3E1D39E1" FromRole="Incomes" ToRole="IncomesNameDictionary" />
+    <NavigationProperty Name="IncomesTypeDictionary" Relationship="Self.FK__Incomes__TypeInc__3F115E1A" FromRole="Incomes" ToRole="IncomesTypeDictionary" />
+  </EntityType>
+  <EntityType Name="IncomesNameDictionary">
+    <Key>
+      <PropertyRef Name="IdNameIncome" />
+    </Key>
+    <Property Name="IdNameIncome" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IncomeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Incomes" Relationship="Self.FK__Incomes__NameInc__3E1D39E1" FromRole="IncomesNameDictionary" ToRole="Incomes" />
+  </EntityType>
+  <EntityType Name="IncomesTypeDictionary">
+    <Key>
+      <PropertyRef Name="IdTypeIncome" />
+    </Key>
+    <Property Name="IdTypeIncome" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Incomes" Relationship="Self.FK__Incomes__TypeInc__3F115E1A" FromRole="IncomesTypeDictionary" ToRole="Incomes" />
+  </EntityType>
+  <EntityType Name="PaymentsHeader">
+    <Key>
+      <PropertyRef Name="IdPayment" />
+    </Key>
+    <Property Name="IdPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ValuePayment" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DatePayment" Type="DateTime" Precision="3" />
+    <Property Name="Tmstmp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PaymentsPositions" Relationship="Self.FK__PaymentsP__Payme__32AB8735" FromRole="PaymentsHeader" ToRole="PaymentsPositions" />
+  </EntityType>
+  <EntityType Name="PaymentsPlaceDictionary">
+    <Key>
+      <PropertyRef Name="IdPlacePayment" />
+    </Key>
+    <Property Name="IdPlacePayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlaceName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PaymentsPositions" Relationship="Self.FK__PaymentsP__Place__3493CFA7" FromRole="PaymentsPlaceDictionary" ToRole="PaymentsPositions" />
+  </EntityType>
+  <EntityType Name="PaymentsPosition">
+    <Key>
+      <PropertyRef Name="TypePaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" />
+    <Property Name="ShopPaymentId" Type="Int32" />
+    <Property Name="PlacePaymentId" Type="Int32" />
+    <Property Name="TypePaymentId" Type="Int32" Nullable="false" />
+    <Property Name="ValuePayment" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="NameOfPayment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PaymentsHeader" Relationship="Self.FK__PaymentsP__Payme__32AB8735" FromRole="PaymentsPositions" ToRole="PaymentsHeader" />
+    <NavigationProperty Name="PaymentsPlaceDictionary" Relationship="Self.FK__PaymentsP__Place__3493CFA7" FromRole="PaymentsPositions" ToRole="PaymentsPlaceDictionary" />
+    <NavigationProperty Name="PaymentsShopDictionary" Relationship="Self.FK__PaymentsP__ShopP__339FAB6E" FromRole="PaymentsPositions" ToRole="PaymentsShopDictionary" />
+    <NavigationProperty Name="PaymentsTypeDictionary" Relationship="Self.FK__PaymentsP__TypeP__3587F3E0" FromRole="PaymentsPositions" ToRole="PaymentsTypeDictionary" />
+  </EntityType>
+  <EntityType Name="PaymentsShopDictionary">
+    <Key>
+      <PropertyRef Name="IdShopPayment" />
+    </Key>
+    <Property Name="IdShopPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PaymentsPositions" Relationship="Self.FK__PaymentsP__ShopP__339FAB6E" FromRole="PaymentsShopDictionary" ToRole="PaymentsPositions" />
+  </EntityType>
+  <EntityType Name="PaymentsTypeDictionary">
+    <Key>
+      <PropertyRef Name="IdTypePayment" />
+    </Key>
+    <Property Name="IdTypePayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PaymentsPosition" Relationship="Self.FK__PaymentsP__TypeP__3587F3E0" FromRole="PaymentsTypeDictionary" ToRole="PaymentsPositions" />
+  </EntityType>
+  <Association Name="FK__Incomes__NameInc__3E1D39E1">
+    <End Role="IncomesNameDictionary" Type="Self.IncomesNameDictionary" Multiplicity="0..1" />
+    <End Role="Incomes" Type="Self.Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomesNameDictionary">
+        <PropertyRef Name="IdNameIncome" />
+      </Principal>
+      <Dependent Role="Incomes">
+        <PropertyRef Name="NameIncomeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Incomes__TypeInc__3F115E1A">
+    <End Role="IncomesTypeDictionary" Type="Self.IncomesTypeDictionary" Multiplicity="0..1" />
+    <End Role="Incomes" Type="Self.Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomesTypeDictionary">
+        <PropertyRef Name="IdTypeIncome" />
+      </Principal>
+      <Dependent Role="Incomes">
+        <PropertyRef Name="TypeIncomeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentsP__Payme__32AB8735">
+    <End Role="PaymentsHeader" Type="Self.PaymentsHeader" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentsPositions" Type="Self.PaymentsPosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentsHeader">
+        <PropertyRef Name="IdPayment" />
+      </Principal>
+      <Dependent Role="PaymentsPositions">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentsP__Place__3493CFA7">
+    <End Role="PaymentsPlaceDictionary" Type="Self.PaymentsPlaceDictionary" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentsPositions" Type="Self.PaymentsPosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentsPlaceDictionary">
+        <PropertyRef Name="IdPlacePayment" />
+      </Principal>
+      <Dependent Role="PaymentsPositions">
+        <PropertyRef Name="PlacePaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentsP__ShopP__339FAB6E">
+    <End Role="PaymentsShopDictionary" Type="Self.PaymentsShopDictionary" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentsPositions" Type="Self.PaymentsPosition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentsShopDictionary">
+        <PropertyRef Name="IdShopPayment" />
+      </Principal>
+      <Dependent Role="PaymentsPositions">
+        <PropertyRef Name="ShopPaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaymentsP__TypeP__3587F3E0">
+    <End Role="PaymentsTypeDictionary" Type="Self.PaymentsTypeDictionary" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentsPositions" Type="Self.PaymentsPosition" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentsTypeDictionary">
+        <PropertyRef Name="IdTypePayment" />
+      </Principal>
+      <Dependent Role="PaymentsPositions">
+        <PropertyRef Name="TypePaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OCTOPUSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Incomes" EntityType="Self.Income" />
+    <EntitySet Name="IncomesNameDictionaries" EntityType="Self.IncomesNameDictionary" />
+    <EntitySet Name="IncomesTypeDictionaries" EntityType="Self.IncomesTypeDictionary" />
+    <EntitySet Name="PaymentsHeaders" EntityType="Self.PaymentsHeader" />
+    <EntitySet Name="PaymentsPlaceDictionaries" EntityType="Self.PaymentsPlaceDictionary" />
+    <EntitySet Name="PaymentsPositions" EntityType="Self.PaymentsPosition" />
+    <EntitySet Name="PaymentsShopDictionaries" EntityType="Self.PaymentsShopDictionary" />
+    <EntitySet Name="PaymentsTypeDictionaries" EntityType="Self.PaymentsTypeDictionary" />
+    <AssociationSet Name="FK__Incomes__NameInc__3E1D39E1" Association="Self.FK__Incomes__NameInc__3E1D39E1">
+      <End Role="IncomesNameDictionary" EntitySet="IncomesNameDictionaries" />
+      <End Role="Incomes" EntitySet="Incomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Incomes__TypeInc__3F115E1A" Association="Self.FK__Incomes__TypeInc__3F115E1A">
+      <End Role="IncomesTypeDictionary" EntitySet="IncomesTypeDictionaries" />
+      <End Role="Incomes" EntitySet="Incomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentsP__Payme__32AB8735" Association="Self.FK__PaymentsP__Payme__32AB8735">
+      <End Role="PaymentsHeader" EntitySet="PaymentsHeaders" />
+      <End Role="PaymentsPositions" EntitySet="PaymentsPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentsP__Place__3493CFA7" Association="Self.FK__PaymentsP__Place__3493CFA7">
+      <End Role="PaymentsPlaceDictionary" EntitySet="PaymentsPlaceDictionaries" />
+      <End Role="PaymentsPositions" EntitySet="PaymentsPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentsP__ShopP__339FAB6E" Association="Self.FK__PaymentsP__ShopP__339FAB6E">
+      <End Role="PaymentsShopDictionary" EntitySet="PaymentsShopDictionaries" />
+      <End Role="PaymentsPositions" EntitySet="PaymentsPositions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaymentsP__TypeP__3587F3E0" Association="Self.FK__PaymentsP__TypeP__3587F3E0">
+      <End Role="PaymentsTypeDictionary" EntitySet="PaymentsTypeDictionaries" />
+      <End Role="PaymentsPositions" EntitySet="PaymentsPositions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

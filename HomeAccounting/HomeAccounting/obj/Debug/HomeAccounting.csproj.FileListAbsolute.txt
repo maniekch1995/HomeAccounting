@@ -1,0 +1,17 @@
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\HomeAccounting.exe.config
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\HomeAccounting.exe
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\HomeAccounting.pdb
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\EntityFramework.dll
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\EntityFramework.SqlServer.dll
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\EntityFramework.xml
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\bin\Debug\EntityFramework.SqlServer.xml
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.FrmMain.resources
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.Properties.Resources.resources
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.csproj.GenerateResource.cache
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.csproj.CoreCompileInputs.cache
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.csproj.CopyComplete
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.exe
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.pdb
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.frmIncomes.resources
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.frmPayments.resources
+P:\studia\ProjektDotNet\HomeAccounting\HomeAccounting\obj\Debug\HomeAccounting.frmCharts.resources

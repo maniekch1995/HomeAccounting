@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OCTOPUSModelStoreContainer" CdmEntityContainer="OCTOPUSEntities4">
+    <EntitySetMapping Name="Incomes">
+      <EntityTypeMapping TypeName="OCTOPUSModel.Incomes">
+        <MappingFragment StoreEntitySet="Incomes">
+          <ScalarProperty Name="IdIncomes" ColumnName="IdIncomes" />
+          <ScalarProperty Name="ValueOfIncome" ColumnName="ValueOfIncome" />
+          <ScalarProperty Name="NameIncome" ColumnName="NameIncome" />
+          <ScalarProperty Name="TypeIncome" ColumnName="TypeIncome" />
+          <ScalarProperty Name="DateIncome" ColumnName="DateIncome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="OCTOPUSModel.Payments">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+          <ScalarProperty Name="ValuePayment" ColumnName="ValuePayment" />
+          <ScalarProperty Name="DatePayment" ColumnName="DatePayment" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Tmstmp" ColumnName="Tmstmp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

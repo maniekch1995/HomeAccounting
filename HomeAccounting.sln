@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAccounting", "HomeAccounting\HomeAccounting.csproj", "{35B4F7E2-E139-4813-893E-019EED4DB7CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35B4F7E2-E139-4813-893E-019EED4DB7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B4F7E2-E139-4813-893E-019EED4DB7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B4F7E2-E139-4813-893E-019EED4DB7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B4F7E2-E139-4813-893E-019EED4DB7CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF79418E-7F13-499C-8F7D-1C5E4F2815A4}
+	EndGlobalSection
+EndGlobal
